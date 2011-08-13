@@ -1,0 +1,12 @@
+{
+	"type": "javascript",
+	"id": "watchtv",
+	"file": "watchtv.js",
+        "showtimeVersion": "3.1.171",
+        "version": "1.4",
+        "author": "Fábio Canada",
+        "title": "WatchTV",
+        "icon": "logo.png",
+        "synopsis": "TV Online Streaming",
+        "description": "<p>The first plugin allowing online streaming of TV channels.<p>"
+}
