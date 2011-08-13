@@ -217,7 +217,7 @@ plugin.addURI(PREFIX + ":genres:(.*):(.*)", function(page, country, website) {
     
     page.appendItem(PREFIX + ':tvlist:' + country + ":" + website, "directory", {title: "All Channels"});
     
-    var doc = new XML(showtime.httpGet(service.mainwebsite + "/genres1.xml").toString());
+    var doc = new XML(showtime.httpGet(service.mainwebsite + "/genres.xml").toString());
 
         for each (var channel in doc.channel.item)
         {
@@ -263,7 +263,7 @@ plugin.addURI(PREFIX + ":tvlist:(.*):(.*)", function(page, country, website) {
     
     var id = 0;
     
-    var doc = new XML(showtime.httpGet(service.mainwebsite + "/genres1.xml").toString());
+    var doc = new XML(showtime.httpGet(service.mainwebsite + "/genres.xml").toString());
     
     var current_link;
     var title;
