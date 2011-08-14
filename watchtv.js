@@ -82,12 +82,6 @@
   });
   
 function startPage(page) {
-    if (!service.tosaccepted)
-        if (showtime.message(tos, true, true))
-            service.tosaccepted = 1;
-        else
-            return;
-    
     n_websites = 0;
   
     var n = 0;
@@ -109,6 +103,12 @@ function startPage(page) {
     page.loading = false;
     page.metadata.logo = plugin.path + "logo.png";
     page.metadata.title = "WatchTV";
+    
+    if (!service.tosaccepted)
+        if (showtime.message(tos, true, true))
+            service.tosaccepted = 1;
+        else
+            page.error("TOS not accepted. WatchTV disabled");
 }
   
 plugin.addURI(PREFIX + ":country", function(page) {
