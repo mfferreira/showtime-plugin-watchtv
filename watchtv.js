@@ -104,8 +104,6 @@ function startPage(page) {
     page.appendItem((service.country == "")?PREFIX + ':country':PREFIX + ':genres:' + service.country + ':auto', 
         "directory", {title: (service.country == "")?"Country":service.country});
         
-    page.appendPassiveItem("item", "Hello", {title: "Test"});
-        
     page.type = "directory";
     page.contents = "items";
     page.loading = false;
