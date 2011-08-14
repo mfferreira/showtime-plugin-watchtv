@@ -2,7 +2,7 @@
 	"type": "javascript",
 	"id": "watchtv",
 	"file": "watchtv.js",
-        "showtimeVersion": "3.1.171",
+        "showtimeVersion": "3.1.164",
         "version": "0.4",
         "author": "Fábio Canada",
         "title": "WatchTV",
