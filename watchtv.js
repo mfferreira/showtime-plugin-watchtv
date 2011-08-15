@@ -219,23 +219,15 @@ plugin.addURI(PREFIX + ":genres:(.*):(.*)", function(page, country, website) {
 
         for each (var channel in doc.channel.item)
         {
+            var icon = (channel.icon != undefined)?channel.icon:"";
             var metadata = {
-                title: channel.title
+                title: channel.title,
+                icon: icon
             }
-            if (channel.folder == 0 || channel.folder == undefined)
-            {
-                if (service.explicit == 1)
-                    page.appendItem(PREFIX + ":genre:" + channel.link + ":" + country + ":" + website, "directory", metadata);
-                else if (service.explicit != 1 && channel.filter == "0")
-                    page.appendItem(PREFIX + ":genre:" + channel.link + ":" + country + ":" + website, "directory", metadata);
-            }
-            else
-            {
-                if (service.explicit == 1)
-                    page.appendItem(PREFIX + ":genres:" + channel.link + ":" + country + ":" + website, "directory", metadata);
-                else if (service.explicit != 1 && channel.filter == "0")
-                    page.appendItem(PREFIX + ":genres:" + channel.link + ":" + country + ":" + website, "directory", metadata);
-            }
+            if (service.explicit == 1)
+                page.appendItem(PREFIX + ":genre:" + channel.link + ":" + country + ":" + website, "directory", metadata);
+            else if (service.explicit != 1 && channel.filter == "0")
+                page.appendItem(PREFIX + ":genre:" + channel.link + ":" + country + ":" + website, "directory", metadata);
         }
 });
 
