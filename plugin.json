@@ -3,7 +3,7 @@
 	"id": "watchtv",
 	"file": "watchtv.js",
         "showtimeVersion": "3.1.164",
-        "version": "0.4",
+        "version": "0.4.1",
         "author": "Fábio Canada",
         "title": "WatchTV",
         "icon": "logo.png",

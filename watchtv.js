@@ -73,12 +73,12 @@
   
   settings.createDivider("Development");
   
-  settings.createBool("debug", "Enable Debugging", false, function(v) {
-    service.debug = v;
-  });
-  
   settings.createInt("timeout", "Timeout (in seconds): ", 20, 1, 120, 1, "s", function(v) {
     service.timeout = v;
+  });
+  
+  settings.createBool("debug", "Enable Debugging", false, function(v) {
+    service.debug = v;
   });
   
 function startPage(page) {
