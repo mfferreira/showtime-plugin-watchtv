@@ -217,17 +217,17 @@ plugin.addURI(PREFIX + ":genres:(.*):(.*)", function(page, country, website) {
     
     var doc = new XML(showtime.httpGet(service.mainwebsite + "/genres.xml").toString());
 
-        for each (var channel in doc.channel.item)
+        for each (var genre in doc.channel.item)
         {
-            var icon = (channel.icon != undefined)?channel.icon:"";
+            var icon = (genre.icon != undefined)?genre.thumbnail:"";
             var metadata = {
-                title: channel.title,
+                title: genre.title,
                 icon: icon
             }
             if (service.explicit == 1)
-                page.appendItem(PREFIX + ":genre:" + channel.link + ":" + country + ":" + website, "directory", metadata);
-            else if (service.explicit != 1 && channel.filter == "0")
-                page.appendItem(PREFIX + ":genre:" + channel.link + ":" + country + ":" + website, "directory", metadata);
+                page.appendItem(PREFIX + ":genre:" + genre.link + ":" + country + ":" + website, "directory", metadata);
+            else if (service.explicit != 1 && genre.filter == "0")
+                page.appendItem(PREFIX + ":genre:" + genre.link + ":" + country + ":" + website, "directory", metadata);
         }
 });
 
